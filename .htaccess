@@ -1,0 +1,17 @@
+
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
+<IfModule mod_rewrite.c>
+RewriteEngine On
+#RewriteBase /
+RewriteCond %{HTTPS_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+RewriteRule ^([a-zA-Z0-9_-]+)\/?$ index.php?param=$1 [NC,QSA,L]
+RewriteRule ^([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)\/?$ index.php?param=$1&param2=$2 [QSA,L]
+RewriteRule ^([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)\/?$ index.php?param=$1&param2=$2&param3=$3 [QSA,L]
+RewriteRule ^([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)\/?$ index.php?param=$1&param2=$2&param3=$3&param4=$4 [QSA,L]
+RewriteRule ^([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)\/?$ index.php?param=$1&param2=$2&param3=$3&param4=$4&param5=$5 [QSA,L]
+RewriteRule ^([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)\/?$ index.php?param=$1&param2=$2&param3=$3&param4=$4&param5=$5&param6=$6 [QSA,L]
+RewriteRule ^([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)\/([a-zA-Z0-9_-]+)\/?$ index.php?param=$1&param2=$2&param3=$3&param4=$4&param5=$5&param6=$6&param7=$7 [QSA,L]
+</IfModule>
